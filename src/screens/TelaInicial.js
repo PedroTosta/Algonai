@@ -6,14 +6,10 @@ function TelaInicial({ navigation }) {
       <View style={styles.body}>
         <Image source={require('../image/algonai-logo.png')} style={styles.img}/>
           <TouchableOpacity style={styles.btnL} onPress={() => navigation.navigate('Login')}>
-            <View>
-              <Text style={styles.txt}>LOGIN</Text>
-            </View>
+            <Text style={styles.txt}>LOGIN</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.btnC} onPress={() => navigation.navigate('Cadastro')}>
-            <View>
-              <Text style={styles.txt}>CADASTRO</Text>
-            </View>
+            <Text style={styles.txt}>CADASTRO</Text>
           </TouchableOpacity>
       </View>
     );
@@ -21,34 +17,38 @@ function TelaInicial({ navigation }) {
 
 const styles = StyleSheet.create({
   body: {
+    display: 'center',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#00202E',
+    width: '100%'
   },
   img:{
     width: 309,
     height: 217
   },
   btnL:{
-    width: 270,
-    backgroundColor: '#37B7ED',
-    borderRadius: 5,
+    width: '80%',
+    height: 50,
+    backgroundColor: '#00965E',
+    borderRadius: 12,
     marginTop: 20,
-    padding: 4
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   btnC:{
-    width: 270,
-    backgroundColor: '#1D79A1',
-    borderRadius: 5,
+    width: '80%',
+    height: 50,
+    backgroundColor: '#0085AD',
+    borderRadius: 12,
     marginTop: 20,
-    padding: 4
+    alignItems: 'center',
+    justifyContent: 'center'
   },
-  txt:{
+  txt:{    
     color: '#FFFFFF',
-    fontSize: 20,
-    fontWeight: 'bold',
-    alignSelf: 'center'
+    fontSize: 24,
+    fontWeight: 'bold'
   }
 });
 

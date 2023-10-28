@@ -4,24 +4,20 @@ import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-nativ
 function TelaCadastro({ navigation }) {
     return(
       <View style={styles.body}>
-          <Text style={styles.titulo}>Cadastro</Text>
-          <Text style={styles.label}>Nome</Text>
-          <TextInput style={styles.input} placeholder="Digite seu nome" placeholderTextColor='#FFFFFF'/>
-          <Text style={styles.label}>E-mail</Text>
-          <TextInput style={styles.input} placeholder="Digite seu e-mail" placeholderTextColor='#FFFFFF'/>
-          <Text style={styles.label}>Senha</Text>
-          <TextInput style={styles.input} placeholder="*********" placeholderTextColor='#FFFFFF'/>
-          <Text style={styles.label}>Confirmar senha</Text>
-          <TextInput style={styles.input} placeholder="*********" placeholderTextColor='#FFFFFF'/>
-          <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('')}>
+          <Text style={styles.titulo}>CADASTRO</Text>
+          <TextInput style={styles.input} placeholder="Digite seu nome" placeholderTextColor='#757575'/>
+          <TextInput style={styles.input} placeholder="Digite seu e-mail" placeholderTextColor='#757575'/>
+          <TextInput style={styles.input} placeholder="*********" placeholderTextColor='#757575'/>
+          <TextInput style={styles.input} placeholder="*********" placeholderTextColor='#757575'/>
+          <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('Login')}>
             <View>
-              <Text style={styles.txt}>Cadastrar-se</Text>
+              <Text style={styles.txt}>CADASTRAR</Text>
             </View>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.conta} onPress={() => navigation.navigate('Login')}>
             <View>
-              <Text style={styles.txt}>Já possui conta? Faça o Login</Text>
+              <Text style={styles.txt2}>Já possui conta? Faça o Login</Text>
             </View>
           </TouchableOpacity>
       </View>
@@ -30,36 +26,40 @@ function TelaCadastro({ navigation }) {
 
 const styles = StyleSheet.create({
   body: {
+    display: 'center',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#00202E',
+    width: '100%'
   },
   input:{
     borderWidth: 1,
     fontSize: 20,
-    borderColor: '#999999',
-    color: '#FFFFFF',
-    height: 40,
-    alignSelf: 'stretch',
+    width: '90%',
+    borderColor: '#D3D3D3',
+    color: '#000000',
+    height: 45,
     padding: 10,
     marginLeft: 10,
     marginRight: 10,
-    borderRadius: 5
+    margin: 5,
+    borderRadius: 12
   },
   titulo:{
-    color: '#FFFFFF',
-    fontSize: 32,
+    color: '#0085AD',
+    fontSize: 40,
     fontWeight: 'bold',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    margin: 20
   },
   btn:{
-    width: 270,
-    height: 40,
-    backgroundColor: '#37B7ED',
-    borderRadius: 5,
-    marginTop: 30,
-    padding: 4
+    width: '80%',
+    height: 50,
+    backgroundColor: '#0085AD',
+    borderRadius: 12,
+    marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   txt:{
     color: '#FFFFFF',
@@ -80,6 +80,12 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     marginTop: 50
+  },
+  txt2: {
+    color: '#0075FF',
+    fontSize: 25,
+    fontWeight: 'bold',
+    alignSelf: 'center'
   }
 });
 

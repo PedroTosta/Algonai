@@ -2,7 +2,7 @@
   "expo": {
     "name": "Algonai",
     "slug": "Algonai",
-    "version": "1.0.0",
+    "version": "1.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -21,7 +21,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.Algonai"
     },
     "web": {
       "favicon": "./assets/favicon.png"

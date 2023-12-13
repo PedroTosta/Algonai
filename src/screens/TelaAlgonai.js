@@ -1,7 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, ToastAndroid } from 'react-native';
+import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 function TelaAlgonai({ navigation }) {
+  
+    const fill = 75;
+
     return(
       <View style={styles.body}>
           <Image source={require('../image/AlgonaiText.png')} style={styles.img}/>
@@ -19,7 +23,18 @@ function TelaAlgonai({ navigation }) {
           </TouchableOpacity>
 
           <View style={styles.boxEstatisticas}>
-
+            <Text style={styles.titulo}>Suas estatísticas</Text>
+            <Text style={styles.titulo}>Acertos</Text>
+            <AnimatedCircularProgress
+              size={80}
+              width={5}
+              fill={fill}
+              tintColor="#ffffff"            
+              backgroundColor="#208bee"
+              style={styles.circle}
+              children={() => <Text style={styles.porcentagem}>75%</Text>}
+            />
+            <Image source={require('../image/AcertosImg.png')} style={styles.img}/>       
           </View>
       </View>
     );
@@ -32,6 +47,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     marginTop: 80
+  },
+  circle:{
+    marginLeft: 15
   },
   img: {
     width: 310,
@@ -52,11 +70,11 @@ const styles = StyleSheet.create({
     borderRadius: 12
   },
   titulo:{
-    color: '#159F6B',
-    fontSize: 40,
+    color: '#FFFFFF',
+    fontSize: 22,
     fontWeight: 'bold',
-    alignSelf: 'center',
-    margin: 20
+    margin: 5,
+    marginLeft: 20
   },
   btn:{
     width: '90%',
@@ -107,6 +125,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#369FFF',
     margin: 30,
     borderRadius: 20
+  },
+  porcentagem:{
+    color: '#FFFFFF',
+    fontSize: 22,
+    fontWeight: 'bold'
   }
 });
 

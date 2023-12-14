@@ -59,7 +59,8 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginTop: 20,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    elevation: 5,
   },
   txt:{
     color: '#FFFFFF',

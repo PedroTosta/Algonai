@@ -2,90 +2,14 @@ import React, { Component, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, ToastAndroid, ScrollView, SafeAreaView } from 'react-native';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
-function TelaAlgonai({ navigation }) {
+function TelaCriarQuestionario({ navigation }) {
   
     const fill = 75;
 
     return(
-      <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}>
-        <View style={styles.body}>
-          <Image source={require('../image/AlgonaiText.png')} style={styles.img}/>
-          <TextInput style={styles.input} placeholder="Código do questionário" placeholderTextColor='#757575'/>
-          <TouchableOpacity style={styles.btn} onPress={() => ToastAndroid.show('Em desenvolvimento!', ToastAndroid.SHORT)}>
-            <View>
-              <Text style={styles.txt}>ENTRAR</Text>
-            </View>
-          </TouchableOpacity>
-          
-          <TouchableOpacity style={styles.btn2} onPress={() => navigation.navigate('CriarQuestionario') }>
-            <View>
-              <Text style={styles.txt}>CRIAR QUESTIONÁRIO</Text>
-            </View>
-          </TouchableOpacity>
-            <View style={styles.boxEstatisticas}>
-              <Text style={styles.titulo}>Suas estatísticas</Text>            
-              <Text style={styles.titulo}>Acertos</Text>
-              <View style={styles.circle}>
-                <View style={styles.circlep}>
-                  <AnimatedCircularProgress
-                    size={80}
-                    width={5}
-                    fill={fill}
-                    tintColor="#ffffff"
-                    backgroundColor="#208bee"
-                    children={() => <Text style={styles.porcentagem}>75%</Text>}
-                  />
-                </View>
-                <View style={styles.img2}>
-                  <Image source={require('../image/AcertosImg.png')} />
-                </View>
-              </View>
-            </View>
-          <View style={styles.boxRanking}>
-            <Text style={styles.titulo}>🏆 Ranking 🏆</Text>
-            <View style={styles.rankingPrimeiro}>
-              <View style={styles.aMedalha}>
-                <Text style={styles.textoMelhada}>🥇</Text>
-              </View>
-              <View style={styles.aGanhador}>
-                <Text style={styles.textoRanking}>Zuzuvido</Text>
-              </View>                            
-            </View>
-            <View style={styles.rankingSegundo}>              
-              <View style={styles.aMedalha}>
-                <Text style={styles.textoMelhada}>🥈</Text>
-              </View>
-              <View style={styles.aGanhador}>
-                <Text style={styles.textoRanking}>Randanai</Text>
-              </View>                 
-            </View>
-            <View style={styles.rankingTerceiro}>              
-              <View style={styles.aMedalha}>
-                <Text style={styles.textoMelhada}>🥉</Text>
-              </View>
-              <View style={styles.aGanhador}>
-                <Text style={styles.textoRanking}>Zozozouila</Text>
-              </View> 
-            </View>
-            <View style={styles.rankingMencao}>
-              <View style={styles.aMedalha}>
-                <Text style={styles.textoMelhada}>🏅</Text>
-              </View>
-              <View style={styles.aGanhador}>
-                <Text style={styles.textoRanking}>Mamamia</Text>
-              </View> 
-            </View>
-            <View style={styles.rankingMencao}>
-              <View style={styles.aMedalha}>
-                <Text style={styles.textoMelhada}>🏅</Text>
-              </View>
-              <View style={styles.aGanhador}>
-                <Text style={styles.textoRanking}>Mk++</Text>
-              </View> 
-            </View>
-          </View>   
-        </View> 
-      </ScrollView>  
+      <View style={styles.body}>
+        
+      </View>
     );
   }
 
@@ -279,4 +203,4 @@ const styles = StyleSheet.create({
   },  
 });
 
-export default TelaAlgonai;
+export default TelaCriarQuestionario;

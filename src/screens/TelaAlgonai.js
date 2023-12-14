@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, ToastAndroid } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, ToastAndroid, ScrollView, SafeAreaView } from 'react-native';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 function TelaAlgonai({ navigation }) {
@@ -7,7 +7,8 @@ function TelaAlgonai({ navigation }) {
     const fill = 75;
 
     return(
-      <View style={styles.body}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}>
+        <View style={styles.body}>
           <Image source={require('../image/AlgonaiText.png')} style={styles.img}/>
           <TextInput style={styles.input} placeholder="Código do questionário" placeholderTextColor='#757575'/>
           <TouchableOpacity style={styles.btn} onPress={() => ToastAndroid.show('Em desenvolvimento!', ToastAndroid.SHORT)}>
@@ -23,20 +24,35 @@ function TelaAlgonai({ navigation }) {
           </TouchableOpacity>
 
           <View style={styles.boxEstatisticas}>
-            <Text style={styles.titulo}>Suas estatísticas</Text>
+            <Text style={styles.titulo}>Suas estatísticas</Text>            
             <Text style={styles.titulo}>Acertos</Text>
-            <AnimatedCircularProgress
-              size={80}
-              width={5}
-              fill={fill}
-              tintColor="#ffffff"            
-              backgroundColor="#208bee"
-              style={styles.circle}
-              children={() => <Text style={styles.porcentagem}>75%</Text>}
-            />
-            <Image source={require('../image/AcertosImg.png')} style={styles.img}/>       
+            <View style={styles.circle}>
+              <View style={styles.circlep}>
+                <AnimatedCircularProgress
+                  size={80}
+                  width={5}
+                  fill={fill}
+                  tintColor="#ffffff"
+                  backgroundColor="#208bee"
+                  children={() => <Text style={styles.porcentagem}>75%</Text>}
+                />
+              </View>
+              <View style={styles.img2}>
+                <Image source={require('../image/AcertosImg.png')} />
+              </View>
+            </View>
           </View>
-      </View>
+          <View style={styles.boxRanking}>
+            <Text style={styles.titulo}>🏆 Ranking 🏆</Text>
+            <View style={styles.rankingPrimeiro}>
+              <Text style={styles.textoRanking}>Zuzuvido</Text>
+            </View>
+            <View style={styles.rankingSegundo}>
+              <Text style={styles.textoRanking}>Randanai</Text>
+            </View>
+          </View>   
+        </View> 
+      </ScrollView>  
     );
   }
 
@@ -48,14 +64,16 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 80
   },
-  circle:{
-    marginLeft: 15
+  scrollView:{
+    width: '100%',
+    alignSelf: 'center',
+    alignItems: 'center'
   },
   img: {
     width: 310,
     height: 40,
     margin: 15,
-  },  
+  },
   input:{
     borderWidth: 1,
     fontSize: 20,
@@ -74,7 +92,8 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     margin: 5,
-    marginLeft: 20
+    marginLeft: 20,
+    display: 'flex',
   },
   btn:{
     width: '90%',
@@ -120,16 +139,74 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   boxEstatisticas: {
-    width: "90%",
+    width: "90%",    
     height: 170,
     backgroundColor: '#369FFF',
     margin: 30,
-    borderRadius: 20
+    borderRadius: 20,
+    display: 'flex'
   },
   porcentagem:{
     color: '#FFFFFF',
     fontSize: 22,
     fontWeight: 'bold'
+  },
+  img2:{
+    width: 91,
+    height: 97,
+    display: 'flex',
+    alignSelf: 'flex-end',
+    alignContent: 'flex-end',
+    alignItems: 'flex-end',
+    marginRight: 10
+  },
+  circle:{
+    marginLeft: 15,
+    display: 'flex',
+    flexDirection: 'row',
+    flex: 2
+  },
+  circlep: {
+    marginLeft: 5,
+    display: 'flex',
+    flexDirection: 'row',
+    alignSelf: 'flex-start',
+    flex: 2
+  },
+  boxRanking: {
+    width: "90%",    
+    height: 350,
+    backgroundColor: '#369FFF',
+    margin: 5,
+    borderRadius: 20,
+    display: 'flex',
+    alignItems: 'center'
+  },
+  rankingPrimeiro:{
+    backgroundColor: '#DBAF00',
+    width: '90%',
+    display: 'flex',
+    margin: 5,
+    borderRadius: 10,
+    justifyContent: 'center',
+    height: 40,
+    flexDirection: 'row'
+  },
+  textoRanking:{
+    color: '#FFFFFF',
+    textAlign: 'center',  
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+  rankingSegundo: {
+    backgroundColor: '#A8A8A8',
+    width: '90%',
+    display: 'flex',
+    margin: 5,
+    borderRadius: 10,
+    justifyContent: 'center',
+    height: 40,
+    flexDirection: 'row'
   }
 });
 
